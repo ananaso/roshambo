@@ -1,6 +1,4 @@
-const yargs = require('yargs/yargs');
-const {hideBin} = require('yargs/helpers');
-const argv = yargs(hideBin(process.argv)).argv;
+const { argv } = require('yargs');
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
