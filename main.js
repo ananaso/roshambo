@@ -11,7 +11,7 @@ class Game {
   }
 
   play() {
-    console.log('Playing a game of Roshambo against the computer.');
+    console.log('Playing a game of Rock, Paper, Scissors against the computer.');
     console.log(`Player plays ${this.pMove.name}`);
     console.log(`Computer plays ${this.cMove.name}`);
     console.log(Game._computeOutcome(this.pMove, this.cMove));
