@@ -2,7 +2,7 @@
   "name": "roshambo",
   "version": "1.0.0",
   "description": "Rock, Paper, Scissors",
-  "main": "main.js",
+  "main": "./bin/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/ananaso/roshambo#readme",
   "dependencies": {
     "yargs": "^16.1.0"
+  },
+  "bin": {
+    "RPS": "./bin/main.js"
   }
 }
