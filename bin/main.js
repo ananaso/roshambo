@@ -32,37 +32,29 @@ class Game {
 
 
 class Move {
+  static _validMoves = {
+    'rock' : 'scissors',
+    'paper' : 'rock',
+    'scissors' : 'paper'
+  };
+
   constructor(name) {
     if (Move._isValid(name)) {
       this.name = name;
     } else {
       throw Error(`'${name}' is not a valid move`);
     }
-    this.canDefeat = Move._canDefeat(name);
+    this.canDefeat = Move._validMoves[name];
   }
 
   static _isValid(name) {
-    const validMoves = ['rock', 'paper', 'scissors'];
-    return validMoves.includes(name);
-  }
-
-  static _canDefeat(name) {
-    if (name === 'rock') {
-      return 'scissors';
-    } else if (name === 'paper') {
-      return 'rock';
-    } else {
-      return 'paper';
-    }
+    return Object.keys(Move._validMoves).includes(name);
   }
 
   static getRandomMove() {
-    const validMoves = ['rock', 'paper', 'scissors'];
     let moveID = randomInteger(0, 2);
-    return new Move(validMoves[moveID]);
+    return new Move(Object.keys(Move._validMoves)[moveID]);
   }
-
-  
 }
 
 try {
